@@ -1,20 +1,18 @@
-NETWOKING 
+LEARN BASIC CONCEPT ABOUT NETWORK
+* sniffing packet 
+* dhcp
+* iptables
+* route
+* some other protocols : dns ,dhcp,... 
+* ... updating
 
-1. learn basic concept about network 
-	sniffing packet 
-    dhcp
-    iptables
-    route
-	some other protocols : dns ,dhcp,... 
-	... updating
+TARGET :  
+   1. to have basic concept & technique when debug packet's flow understand operation of some protocols in network side  
+   2. to use tcpdump, wireshark more effective  
 
-> target : 
-    + to have basic concept & technique when debug packet's flow understand operation of some protocols in network side
-    + to use tcpdump, wireshark more effective
+PROGRAMMING
+* c programing with network follow "hands-on network programming"
 
-2. programming
-	c programing with network follow "hands-on network programming"
-
-> target :
-   + understand how application layer in networking works
-   + some protocols work in coding side
+TARGET :
+   1. understand how application layer in networking works  
+   2. some protocols work in coding side
