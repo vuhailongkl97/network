@@ -49,8 +49,8 @@ int main(int argc , char *argv[])
 
     int len = sizeof(cli_addr);
     int n  = recvfrom(fd, (char *)buf, 100, 0, (struct sockaddr *)&cli_addr, &len);
-
-    printf("client : %s, len  %d\n", buf, len);
+    char *ip = inet_ntoa(cli_addr.sin_addr);
+    printf("client : %s, len  %d, ip : %s\n", buf, len, ip);
     bzero(buf, 100);
     strcpy(buf, "reply from server");
     n = sendto(fd, (const char *)buf, strlen(buf),0 , (struct sockaddr *)&cli_addr, sizeof(addr));
