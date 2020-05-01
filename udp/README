@@ -1,0 +1,12 @@
+introduction
+ this program is used for test udp 
+
+flow operation:
+process client & server
+
+ 1. server create socket and bind on an valid ip address . wait client connect
+ 2. client connect and send msg to server
+ 3. server receive message and struct "sockaddr_in cli_addr" via recvfrom() function
+-> server use that data for the client's info to send to client
+
+
