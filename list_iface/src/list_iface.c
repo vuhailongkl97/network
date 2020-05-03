@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
+#include <config.h>
 
 extern int errno;
 int
@@ -12,6 +13,11 @@ main(void)
 {
     struct ifaddrs *addr_list;
     struct ifaddrs *addr_head;
+
+#if defined(PACKAGE_BUGREPORT)
+    printf("this packet compiled with automake, \
+            packet bug report is %s\n", PACKAGE_BUGREPORT);
+#endif
 
     if (getifaddrs(&addr_list) == -1)
     {
