@@ -22,13 +22,9 @@ int main(void)
     printf("local time is: %s\n", ctime(&timer));
 
     char  address_buffer[100];
-    static const uint8_t myaddr[16] = {0xfe, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00 , 0x00, \
-        0xb5, 0x82, 0xec, 0x91, 0x81, 0x03, 0x59, 0x09};
     struct sockaddr_in6 server ;
     server.sin6_family = AF_INET6;
     server.sin6_port =   htons(8080);
-    //server.sin6_addr.s_addr = inet_addr("192.168.0.97");
-    //memcpy(server.sin6_addr.s6_addr, myaddr, sizeof myaddr);
     server.sin6_addr = in6addr_any;
 
     fd = socket(AF_INET6, SOCK_STREAM, 0);
@@ -92,12 +88,12 @@ int main(void)
         "HTTP/1.1 200 OK\r\n"
         "Connection: close\r\n"
         "Content-Type: text/plain\r\n\r\n";
-        //"Local time is : ";
+        "Local time is : ";
     bytes_send = send(new_fd, response, strlen(response), 0);
-    printf("Sent response %d of %d bytes\n", bytes_send , strlen(time_msg));
+    printf("Sent response %d of %ld bytes\n", bytes_send , strlen(time_msg));
 
     bytes_send = send(new_fd, time_msg, strlen(time_msg), 0);
-    printf("Sent %d of %d bytes\n", bytes_send , strlen(time_msg));
+    printf("Sent %d of %ld bytes\n", bytes_send , strlen(time_msg));
 
     close(new_fd);
     close(fd);
