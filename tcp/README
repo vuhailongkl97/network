@@ -1,0 +1,19 @@
+application:
+
+   test dual stack networking
+
+access via web browser( http)
+use both ipv6 , ipv4 to get data from server
+
+
+request from client's browser [::ffff:192.168.0.97]:8080
+or 192.168.0.97
+
+
+Note:
+1. should scan all interface avaliable ( IP , interface) 
+to use bind on suitable
+
+2. from now implement ipv6 to it can support dual stack for own application
+
+3. need investigate response of HTTP message more
