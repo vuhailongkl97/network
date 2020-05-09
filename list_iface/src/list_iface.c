@@ -9,7 +9,7 @@
 
 extern int errno;
 int
-main(void)
+get_iface(void)
 {
     struct ifaddrs *addr_list;
     struct ifaddrs *addr_head;
