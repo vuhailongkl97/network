@@ -1,11 +1,12 @@
 bin_PROGRAMS = target
-noinst_LIBRARIES= liblong.a
+lib_LTLIBRARIES = liblong.la
 
-liblong_a_SOURCES=list_iface.c
-target_LDADD = -L. -llong
+liblong_la_SOURCES=list_iface.c
+target_LDADD = liblong.la
+
 target_SOURCES = main.c
 if  MY_FLAGS_SET
-list_inf_CFLAGS = -DLONGKK
+target_CFLAGS = -DLONGKK
 else
-list_inf_CFLAGS = -DNO_FLAG
+target_CFLAGS = -DNO_FLAG
 endif
