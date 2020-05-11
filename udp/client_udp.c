@@ -26,8 +26,8 @@ int main(int argc , char *argv[])
         printf("argv[%d] : %s\t", i, argv[i]);
 
     printf("\n");
-    SRV_PORT = atoi(argv[1]);
-    strcpy(SERVER_IP, argv[2]);
+    SRV_PORT = atoi(argv[2]);
+    strcpy(SERVER_IP, argv[1]);
 
     fd = socket(AF_INET, SOCK_DGRAM, 0);
     if ( -1 == fd)
