@@ -2,6 +2,7 @@ bin_PROGRAMS = target
 lib_LTLIBRARIES = liblong.la
 
 liblong_la_SOURCES=list_iface.c
+liblong_la_LDFLAGS= -static
 target_LDADD = liblong.la
 
 target_SOURCES = main.c

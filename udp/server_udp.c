@@ -50,7 +50,8 @@ int main(int argc , char *argv[])
     int len = sizeof(cli_addr);
     int n  = recvfrom(fd, (char *)buf, 100, 0, (struct sockaddr *)&cli_addr, &len);
     char *ip = inet_ntoa(cli_addr.sin_addr);
-    printf("client : %s, len  %d, ip : %s\n", buf, len, ip);
+    int cli_port = ntohs(cli_addr.sin_port);
+    printf("client : %s, len  %d, ip : %s port %d\n", buf, len, ip, cli_port);
     bzero(buf, 100);
     strcpy(buf, "reply from server");
     n = sendto(fd, (const char *)buf, strlen(buf),0 , (struct sockaddr *)&cli_addr, sizeof(addr));

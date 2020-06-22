@@ -54,7 +54,8 @@ int main(int argc , char *argv[])
     len = sizeof(addr);
     recvfrom(fd, (char *)buf2, 100, 0, (struct sockaddr *)&addr,
             &len);
-    printf("SERVER : %s\n", buf2);
+    int serv_port = addr.sin_port;
+    printf("SERVER : %s port %d\n", buf2, ntohs(serv_port));
     strncpy(buf2, "reply from cli", sizeof(buf2));
     ret = sendto(fd, (const void*)buf2, strlen(buf2), 0, (const struct sockaddr*)&addr, sizeof(addr));
 
